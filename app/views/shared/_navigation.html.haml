@@ -1,0 +1,8 @@
+= link_to "Home", root_path
+%ul.nav
+  - if logged_in?
+    %li
+      = link_to translate('logout'), '/logout', :method=>'delete'
+  - else
+    %li
+      = link_to translate('login'), '/new'

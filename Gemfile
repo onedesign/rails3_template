@@ -1,55 +1,48 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
-gem 'unicorn'
-gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
-gem "haml"
-gem "inherited_resources"
-gem "has_scope"
-gem "kaminari"
-gem "devise"
-gem "formtastic"
-gem "friendly_id"
-gem 'jquery-rails'
-gem 'airbrake'
-gem 'inploy'
+gem 'rails', '3.2.11'
+
+gem 'unicorn', '>= 4.3.1'
+
+gem 'pg'
 
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'compass-rails'
-  gem 'uglifier'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'jquery-rails'
+gem 'haml', '>= 3.1.7'
+gem 'haml-rails', '>= 0.3.5'
+
+gem 'sendgrid', '>= 1.0.1'
+
+gem 'sorcery', '~> 0.8.1'
+gem 'cancan', '>= 1.6.8'
+gem 'rolify', '>= 3.2.0'
+gem 'simple_form', '>= 2.0.4'
+
+gem 'rails-backbone'
+
+gem 'carrierwave', '>= 0.8.0'
 
 group :development do
-  gem 'guard-rspec'
-  gem 'guard-jasmine'
-  gem 'guard-livereload'
-  gem 'rack-livereload'
-  gem 'rb-fsevent', '~> 0.9.1'
-  gem "mailcatcher"
-  gem "faker"
-end
-
-group :development, :test do
-  gem "rspec-rails"
-  gem 'sqlite3'
-  gem "pry-rails"
-  gem "jasminerice"
+  gem 'tomdoc', '>= 0.2.5'
+  gem 'better_errors', '>= 0.3.2'
+  gem 'binding_of_caller', '>= 0.6.8'
 end
 
 group :test do
-  gem 'turn', :require => false
-  gem "rspec"
-  gem "capybara"
-  gem 'capybara-screenshot'
-  gem "poltergeist"
-  gem "xpath"
-  gem "launchy"
-  gem "factory_girl_rails"
+  gem 'rspec-rails', '>= 2.12.2'
+  gem 'database_cleaner', '>= 0.9.1'
+  gem 'email_spec', '>= 1.4.0'
+  gem 'cucumber-rails', '>= 1.3.0'
+  gem 'capybara', '>= 2.0.2'
+  gem 'factory_girl_rails', '>= 4.1.0'
 end
 
-group :production do
-  gem 'mysql2'
-  gem "newrelic_rpm"
+group :test, :development do
+  gem 'konacha', '>= 2.4.0'
+  gem 'konacha-chai-matchers'
 end
