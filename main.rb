@@ -1,8 +1,8 @@
 TEMPLATE_REPO_URL = "https://github.com/onedesign/rails3_template/raw/master"
 
-def pull_down_file(remote_file_path, local_file_path)
+def pull_down_file(remote_file_path, local_file_path={})
   local_file_path = local_file_path || remote_file_path
-  run "wget --no-check-certificate '#{TEMPLATE_REPO_URL}/#{file_path}' -O #{local_file_path}"
+  run "wget --no-check-certificate '#{TEMPLATE_REPO_URL}/#{remote_file_path}' -O #{local_file_path}"
 end
 
 run "rm -Rf .gitignore README public/index.html test app/views/layouts/*"
@@ -14,12 +14,13 @@ pull_down_file "gitignore", ".gitignore"
 run "bundle install"
 
 application  <<-GENERATORS
-      g.template_engine :haml
-      g.test_framework  :rspec, fixture: true
-      g.fixture_replacement :factory_girl
-      g.helper false
-      g.view_specs false
-    end
+  config.generators do |g|
+    g.template_engine :haml
+    g.test_framework  :rspec, fixture: true
+    g.fixture_replacement :factory_girl
+    g.helper false
+    g.view_specs false
+  end
 GENERATORS
 
 
