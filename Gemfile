@@ -1,48 +1,50 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
-gem 'unicorn', '>= 4.3.1'
+gem 'unicorn'
 
 gem 'pg'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
-gem 'haml', '>= 3.1.7'
-gem 'haml-rails', '>= 0.3.5'
+gem 'haml'
+gem 'haml-rails'
 
-gem 'sendgrid', '>= 1.0.1'
+gem 'sendgrid'
 
-gem 'sorcery', '~> 0.8.1'
-gem 'cancan', '>= 1.6.8'
-gem 'rolify', '>= 3.2.0'
-gem 'simple_form', '>= 2.0.4'
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+gem 'simple_form'
+gem 'activeadmin'
 
 gem 'rails-backbone'
 
-gem 'carrierwave', '>= 0.8.0'
+gem 'carrierwave'
 
 group :development do
-  gem 'tomdoc', '>= 0.2.5'
-  gem 'better_errors', '>= 0.3.2'
-  gem 'binding_of_caller', '>= 0.6.8'
+  gem 'tomdoc'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
-  gem 'rspec-rails', '>= 2.12.2'
-  gem 'database_cleaner', '>= 0.9.1'
-  gem 'email_spec', '>= 1.4.0'
-  gem 'cucumber-rails', '>= 1.3.0'
-  gem 'capybara', '>= 2.0.2'
-  gem 'factory_girl_rails', '>= 4.1.0'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :test, :development do
-  gem 'konacha', '>= 2.4.0'
+  gem 'konacha'
   gem 'konacha-chai-matchers'
+  gem 'sinon-rails'
 end

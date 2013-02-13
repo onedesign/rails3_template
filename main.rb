@@ -23,21 +23,14 @@ application  <<-GENERATORS
 GENERATORS
 
 
-# TODO: Create the DB
-
 # Run Gem installers
 generate "rspec:install"
-generate "sorcery:install"
+generate "devise:install"
 generate "simple_form:install"
 generate "cucumber:install"
 generate "backbone:install"
+generate "active_admin:install"
 
-
-
-run "rake db:migrate"
-
-
-run "wget --no-check-certificate '#{TEMPLATE_REPO_URL}/gitignore' -O .gitignore"
 
 # SETUP DEFAULT VIEWS
 run "mkdir app/views/shared"
@@ -45,13 +38,8 @@ run "mkdir app/views/shared"
 pull_down_file "app/views/layouts/application.html.haml"
 pull_down_file "app/views/shared/_navigation.html.haml"
 pull_down_file "app/views/shared/_messages.html.haml"
-pull_down_file "spec/spec_helper.rb"
-
+pull_down_file "spec/support/devise.rb"
 
 run "touch tmp/.gitkeep"
-
-git :init
-git :add => '.'
-git :commit => '-am "Initial commit"'
 
 puts "SUCCESS!"

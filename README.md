@@ -31,17 +31,15 @@ Or:
 
 ## Preferences:
 
-* Source control: [git](http://git-scm.com/)
 * Dev/Production webserver: [unicorn](http://unicorn.bogomips.org/)
 * Error messaging: [Better Errors](https://github.com/charliesome/better_errors)
-* Ruby Versioning: [RVM](https://rvm.io/)
 
 ## Ruby on Rails
 
 This application requires:
 
 * Ruby version 1.9.3
-* Rails version 3.2.11
+* Rails version 3.2.12
 
 ## Database
 
@@ -49,12 +47,6 @@ This application uses [PostgreSQL](http://www.postgresql.org/) with [ActiveRecor
 
 ## Rake Tasks
 
-These tasks assume that you have access to the team-interval and team-interval-staging heroku apps. They also assume
-that your development database is called `team_interval_development`
-
-* Create production db backup `bundle exec rake data:dump`
-* Sync staging db with most recent production db dump `bundle exec rake data:sync:staging`
-* Sync local db with most recent produciton db dump `bundle exec rake data:sync:local`
 
 ## Development
 
@@ -62,15 +54,12 @@ that your development database is called `team_interval_development`
 * Front-end Preprocessors: [CoffeeScript](http://coffeescript.org/), [SCSS](http://sass-lang.com/)
 * Back-end Testing Frameworks: [RSpec](http://rspec.info/), [Factory Girl](https://github.com/thoughtbot/factory_girl), and [Cucumber](http://cukes.info/)
 * Front-end Testing Frameworks: [Mocha](http://visionmedia.github.com/mocha/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
-* Front-end Framework: [Zurb Foundation](http://foundation.zurb.com/), [Backbone.js](http://backbonejs.org/)
+* Front-end Framework: [Backbone.js](http://backbonejs.org/)
 * Form Builder: [SimpleForm](https://github.com/plataformatec/simple_form)
-* Authentication: [Sorcery](https://github.com/noamb/sorcery)
+* Authentication: [Sorcery](https://github.com/plataformatec/devise)
 * Authorization: [CanCan](https://github.com/ryanb/cancan)
-
-## Fun and Useful Things We're Using
-
-* [Active Admin](http://activeadmin.info/)
-* [CarrierWave](https://github.com/jnicklas/carrierwave)
+* Simple Admin Functions: [Active Admin](http://activeadmin.info/)
+* File Uploads: [CarrierWave](https://github.com/jnicklas/carrierwave)
 
 ## Email
 
@@ -78,9 +67,6 @@ The application is configured to send email using a [SendGrid](http://sendgrid.c
 
 ## Monitoring/Analytics
 
-* [Airbrake](https://airbrake.io)
-* [Newrelic](https://newrelic.com)
-* [KissMetric](http://kissmetrics.com)
 
 ## Documentation and Support
 
