@@ -1,8 +1,8 @@
 TEMPLATE_REPO_URL = "https://github.com/onedesign/rails3_template/raw/master"
 
-def pull_down_file(remote_file_path, local_file_path={})
+def pull_down_file(remote_file_path, local_file_path=nil)
   local_file_path = local_file_path || remote_file_path
-  run "wget --no-check-certificate '#{TEMPLATE_REPO_URL}/#{remote_file_path}' -O #{local_file_path}"
+  run "curl -OL http://spine-health.com/index.php --insecure '#{TEMPLATE_REPO_URL}/#{remote_file_path}' > #{local_file_path}"
 end
 
 run "rm -Rf .gitignore README public/index.html test app/views/layouts/*"
