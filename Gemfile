@@ -18,7 +18,6 @@ gem 'haml-rails'
 
 gem 'sendgrid'
 
-gem 'devise'
 gem 'cancan'
 gem 'rolify'
 gem 'simple_form'

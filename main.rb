@@ -24,10 +24,16 @@ application  <<-GENERATORS
   end
 GENERATORS
 
+if yes?("Would you like to install Devise?")
+  gem("devise")
+  generate("devise:install")
+  model_name = ask("What would you like the user model to be called? [user]")
+  model_name = "user" if model_name.blank?
+  generate("devise", model_name)
+end
 
 # Run Gem installers
 generate "rspec:install"
-generate "devise:install"
 generate "simple_form:install"
 generate "cucumber:install"
 generate "backbone:install"
@@ -47,4 +53,4 @@ gsub_file "README.md", /App_Name/, "#{app_name.humanize.titleize}"
 
 run "touch tmp/.gitkeep"
 
-puts "SUCCESS!"
+puts "You did it!"
