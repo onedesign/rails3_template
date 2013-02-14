@@ -12,7 +12,7 @@ pull_down_file "Gemfile"
 pull_down_file "gitignore", ".gitignore"
 
 
-# run "bundle install"
+run "bundle install"
 
 application  <<-GENERATORS
   config.generators do |g|
@@ -25,13 +25,13 @@ application  <<-GENERATORS
 GENERATORS
 
 
-# Run Gem installers
-# generate "rspec:install"
-# generate "devise:install"
-# generate "simple_form:install"
-# generate "cucumber:install"
-# generate "backbone:install"
-# generate "active_admin:install"
+Run Gem installers
+generate "rspec:install"
+generate "devise:install"
+generate "simple_form:install"
+generate "cucumber:install"
+generate "backbone:install"
+generate "active_admin:install"
 
 
 # SETUP DEFAULT VIEWS
