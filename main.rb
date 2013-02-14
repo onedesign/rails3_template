@@ -2,7 +2,8 @@ TEMPLATE_REPO_URL = "https://github.com/onedesign/rails3_template/raw/master"
 
 def pull_down_file(remote_file_path, local_file_path=nil)
   local_file_path = local_file_path || remote_file_path
-  run "curl -OL --insecure '#{TEMPLATE_REPO_URL}/#{remote_file_path}' > #{local_file_path}"
+  puts local_file_path
+  run "curl -L --insecure '#{TEMPLATE_REPO_URL}/#{remote_file_path}' > #{local_file_path}"
 end
 
 run "rm -Rf .gitignore README public/index.html test app/views/layouts/*"
@@ -11,7 +12,7 @@ pull_down_file "Gemfile"
 pull_down_file "gitignore", ".gitignore"
 
 
-run "bundle install"
+# run "bundle install"
 
 application  <<-GENERATORS
   config.generators do |g|
@@ -25,12 +26,12 @@ GENERATORS
 
 
 # Run Gem installers
-generate "rspec:install"
-generate "devise:install"
-generate "simple_form:install"
-generate "cucumber:install"
-generate "backbone:install"
-generate "active_admin:install"
+# generate "rspec:install"
+# generate "devise:install"
+# generate "simple_form:install"
+# generate "cucumber:install"
+# generate "backbone:install"
+# generate "active_admin:install"
 
 
 # SETUP DEFAULT VIEWS

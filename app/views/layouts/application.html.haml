@@ -12,7 +12,7 @@
     .site-container
       %header.site-header
         = render 'shared/navigation'
-        = render 'shared/messages'
+        = render 'shared/flash_messages'
       %section.main-content{:role => "main"}
         = yield
       %footer.site-footer
