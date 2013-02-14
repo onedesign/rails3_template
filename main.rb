@@ -25,7 +25,7 @@ application  <<-GENERATORS
 GENERATORS
 
 
-Run Gem installers
+# Run Gem installers
 generate "rspec:install"
 generate "devise:install"
 generate "simple_form:install"
