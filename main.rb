@@ -6,7 +6,7 @@ def pull_down_file(remote_file_path, local_file_path=nil)
   run "curl -L --insecure '#{TEMPLATE_REPO_URL}/#{remote_file_path}' > #{local_file_path}"
 end
 
-run "rm -Rf .gitignore README public/index.html test app/views/layouts/*"
+run "rm -Rf .gitignore README README.rdoc public/index.html test app/views/layouts/*"
 
 pull_down_file "Gemfile"
 pull_down_file "gitignore", ".gitignore"
