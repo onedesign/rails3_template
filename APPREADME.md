@@ -1,4 +1,4 @@
-# ONE DESIGN COMPANY
+# App_Name
 
 ## Installing:
 

@@ -41,6 +41,9 @@ pull_down_file "app/views/layouts/application.html.haml"
 pull_down_file "app/views/shared/_navigation.html.haml"
 pull_down_file "app/views/shared/_flash_messages.html.haml"
 pull_down_file "spec/support/devise.rb"
+pull_down_file "APPREADME.md", "README.md"
+
+gsub_file "README.md", /App_Name/, "#{app_name.humanize.titleize}"
 
 run "touch tmp/.gitkeep"
 
