@@ -24,14 +24,19 @@ application  <<-GENERATORS
   end
 GENERATORS
 
-if yes?("Would you like to install Devise?")
+if yes?("Use Devise for authentication?")
   gem("devise")
   generate("devise:install")
-  model_name = ask("What would you like the user model to be called? [user]")
-  model_name = "user" if model_name.blank?
-  generate("devise", model_name)
+  if yes?("Would you like to create a user model?")
+    model_name = ask("What would you like the user model to be called? [user]")
+    model_name = "user" if model_name.blank?
+    generate("devise", model_name)
+  end
 end
 
+if yes?("Wanna use sendgrid?")
+  gem("sendgrid")
+end
 # Run Gem installers
 generate "rspec:install"
 generate "simple_form:install"
