@@ -37,6 +37,12 @@ end
 if yes?("Wanna use sendgrid?")
   gem("sendgrid")
 end
+
+if yes?("Should we add a welcome controller?")
+    generate("controller", "Welcome index")
+    route("root :to => 'welcome#index'")
+end
+
 # Run Gem installers
 generate "rspec:install"
 generate "simple_form:install"
